@@ -36,6 +36,19 @@ you can use to find the root cause.
 - **Storage or alert failures never stop monitoring**; they are logged and the loop continues.
 - **Interfaces for storage and alerts**, so the AWS pieces can be swapped or tested without AWS.
 
+## Results
+
+Deployed on an AWS EC2 instance, monitoring 4 services every 60 seconds. Every check is stored
+in DynamoDB, and an SNS email alert is sent once when a service fails 3 checks in a row.
+
+**Check results stored in DynamoDB**
+
+![DynamoDB results](docs/dynamodb-results.png)
+
+**DOWN alert email received through SNS**
+
+![Alert email](docs/alert-email.png)
+
 ## Run it locally (no AWS needed)
 
 Requirements: Java 17+ and Maven.
